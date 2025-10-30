@@ -1,6 +1,6 @@
-# Andrew Hsu — Personal Website
+# Andrew Hsu Personal Website
 
-Live: andrewhsu.me
+Live: https://andrewhsu.me
 
 ## About
 Modern, responsive personal site to showcase projects, skills, and contact info.
@@ -22,4 +22,4 @@ Modern, responsive personal site to showcase projects, skills, and contact info.
 HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+), Google Fonts, Font Awesome.
 
 ## Contact
-andrew.hsu@columbia.edu · LinkedIn: linkedin.com/in/andrewhsu6/ · GitHub: github.com/andrew-hsu-6
+andrew.hsu@columbia.edu · https://linkedin.com/in/andrewhsu6/ · https://github.com/andrew-hsu-6
