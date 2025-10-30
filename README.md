@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Personal Website - Columbia CS Student
 
 A modern, responsive personal website built with HTML, CSS, and JavaScript, designed specifically for computer science students and job recruiting.
@@ -245,3 +246,6 @@ Remember to:
 
 
 
+=======
+# andrew-hsu-6.github.io
+>>>>>>> 74cd909759dcb0c33fde79939061d948cf09b2c7
