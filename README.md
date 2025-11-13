@@ -3,7 +3,7 @@
 Live: https://andrewhsu.me
 
 ## About
-Modern, responsive personal site to showcase projects, skills, and contact info.
+Personal website to familiarize myself with frontend skills.
 
 ## Features
 - Responsive layout (HTML/CSS/JS)
