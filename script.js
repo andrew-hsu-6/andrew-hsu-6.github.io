@@ -30,6 +30,100 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Liquid Glass Navigation Indicator
+function updateNavIndicator() {
+    const indicator = document.getElementById('nav-indicator');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    if (!indicator || navLinks.length === 0) return;
+    
+    // Get current scroll position
+    const scrollPosition = window.scrollY + 100; // Offset for better detection
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    // Find the active section
+    let activeSection = 'home';
+    let activeLink = null;
+    
+    // Special case for top of page
+    if (window.scrollY < 50) {
+        activeSection = 'home';
+    } else {
+        // Check each section
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const isLastSection = index === sections.length - 1;
+            
+            // For the last section, check if we're past the previous section
+            if (isLastSection) {
+                if (scrollPosition >= sectionTop - 100) {
+                    activeSection = sectionId;
+                }
+            } else {
+                // For other sections, check if we're within the section bounds
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    activeSection = sectionId;
+                }
+            }
+        });
+        
+        // Fallback: if we're near the bottom of the page, activate the last section
+        if (window.scrollY + windowHeight >= documentHeight - 50) {
+            const lastSection = sections[sections.length - 1];
+            if (lastSection) {
+                activeSection = lastSection.getAttribute('id');
+            }
+        }
+    }
+    
+    // Find and update the active link
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === activeSection) {
+            link.classList.add('active');
+            activeLink = link;
+        }
+    });
+    
+    // Update indicator position
+    if (activeLink) {
+        const linkRect = activeLink.getBoundingClientRect();
+        const menuRect = document.getElementById('nav-menu').getBoundingClientRect();
+        
+        indicator.style.width = `${linkRect.width}px`;
+        indicator.style.left = `${linkRect.left - menuRect.left}px`;
+        indicator.classList.add('active');
+    } else {
+        indicator.classList.remove('active');
+    }
+}
+
+// Initialize indicator on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateNavIndicator();
+    
+    // Update on scroll
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateNavIndicator();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    
+    // Update on resize
+    window.addEventListener('resize', () => {
+        updateNavIndicator();
+    });
+});
+
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -59,7 +153,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     // Add fade-in class to elements that should animate
-    const animateElements = document.querySelectorAll('.project-card, .skill-item, .stat-item, .education-item, .contact-method');
+    const animateElements = document.querySelectorAll('.project-card, .skill-item, .stat-item, .education-item');
     animateElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
@@ -87,41 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields.', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        // Simulate form submission (replace with actual form handling)
-        showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-        this.reset();
-    });
-}
-
-// Email validation helper
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
 
 // Notification system
 function showNotification(message, type = 'info') {
@@ -172,28 +231,88 @@ function showNotification(message, type = 'info') {
 }
 
 // Typing animation for hero section
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
+function typeWriter(element, speed = 80) {
+    return new Promise((resolve) => {
+        const textBefore = "Hi, I'm ";
+        const textAfter = "Andrew";
+        const totalLength = textBefore.length + textAfter.length;
+        
+        // Wait a moment, then start typing animation
+        setTimeout(() => {
+            let i = 0;
+            
+            function type() {
+                if (i < textBefore.length) {
+                    // Type "Hi, I'm " character by character
+                    const currentText = textBefore.substring(0, i + 1);
+                    element.innerHTML = currentText;
+                    i++;
+                    setTimeout(type, speed);
+                } else if (i < totalLength) {
+                    // Type "Andrew" character by character with highlight
+                    const andrewProgress = i - textBefore.length;
+                    const currentAndrew = textAfter.substring(0, andrewProgress + 1);
+                    element.innerHTML = textBefore + '<span class="highlight">' + currentAndrew + '</span>';
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Animation complete - ensure final state
+                    element.innerHTML = textBefore + '<span class="highlight">' + textAfter + '</span>';
+                    // Remove width and height constraints after animation completes
+                    setTimeout(() => {
+                        element.style.width = '';
+                        element.style.minHeight = '';
+                    }, 100);
+                    // Resolve promise to signal completion
+                    resolve();
+                }
+            }
+            
+            // Start with empty content
+            element.innerHTML = '';
+            type();
+        }, 100);
+    });
 }
 
 // Initialize typing animation when page loads
 document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroDescription = document.querySelector('.hero-description');
+    const heroButtons = document.querySelector('.hero-buttons');
+    const codeAnimation = document.querySelector('.code-animation');
+    const codeLines = document.querySelectorAll('.code-line');
+    
+    // Code lines, subtitle, description, and buttons are hidden by default (opacity: 0 in CSS)
+    // They will be animated after typing completes
+    
     if (heroTitle) {
-        const originalText = heroTitle.textContent;
+        // Store original dimensions immediately to prevent any layout shift
+        const originalHeight = heroTitle.offsetHeight;
+        const originalWidth = heroTitle.offsetWidth;
+        
+        // Lock dimensions to prevent shifting
+        heroTitle.style.minHeight = originalHeight + 'px';
+        heroTitle.style.width = originalWidth + 'px';
+        
+        // Hide text immediately so animation starts from empty
+        heroTitle.innerHTML = '';
+        
         setTimeout(() => {
-            typeWriter(heroTitle, originalText, 80);
+            typeWriter(heroTitle, 80).then(() => {
+                // Start all animations after typing completes
+                // Animate subtitle, description, and buttons
+                if (heroSubtitle) heroSubtitle.classList.add('animate');
+                if (heroDescription) heroDescription.classList.add('animate');
+                if (heroButtons) heroButtons.classList.add('animate');
+                
+                // Start code block background animation first, then code lines
+                if (codeAnimation) codeAnimation.classList.add('animate');
+                codeLines.forEach((line) => {
+                    line.classList.add('animate');
+                });
+            });
         }, 1000);
     }
 });
