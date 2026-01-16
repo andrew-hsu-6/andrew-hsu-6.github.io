@@ -6,50 +6,31 @@
     <title>Andrew Hsu</title>
     <meta name="description" content="Computer Science student at Columbia University specializing in algorithms, data structures, and software development.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Andrew Hsu</a>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Hi, I'm Andrew</h1>
+                <p>
+                    Computer Science student at Columbia University. Formerly an investment analyst. 
+                    Now building software and learning new things.
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/andrewhsu6/" target="_blank">LinkedIn</a> · 
+                    <a href="https://github.com/andrew-hsu-6/" target="_blank">GitHub</a> · 
+                    <a href="https://leetcode.com/hsushuyu/" target="_blank">LeetCode</a>
+                </p>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1 class="hero-title">Hi, I'm Andrew</h1>
-            <p class="hero-description">
-                Computer Science student at Columbia University. Formerly an investment analyst. 
-                Now building software and learning new things.
-            </p>
-            <div class="hero-links">
-                <a href="https://www.linkedin.com/in/andrewhsu6/" target="_blank" class="hero-link">LinkedIn</a>
-                <a href="https://github.com/andrew-hsu-6/" target="_blank" class="hero-link">GitHub</a>
-                <a href="https://leetcode.com/hsushuyu/" target="_blank" class="hero-link">LeetCode</a>
-            </div>
-        </div>
-    </section>
+        <hr>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About</h2>
                 <p>
                     Formerly an investment analyst working in finance. Now a student at Columbia University
                     pursuing a career in software engineering. Feel free to connect with me as I begin my journey 
@@ -66,99 +47,91 @@
                 <div class="education-list">
                     <div class="education-item">
                         <div class="education-header">
-                            <h4>Columbia University</h4>
+                            <div class="education-title-group">
+                                <img src="images/columbia-seal.png" alt="Columbia University Seal" class="education-icon" />
+                                <strong>Columbia University</strong>
+                            </div>
                             <span class="education-period">2025 - Present</span>
                         </div>
                         <p>Bachelor of Science in Computer Science</p>
                     </div>
                     <div class="education-item">
                         <div class="education-header">
-                            <h4>The University of Texas at Austin</h4>
+                            <div class="education-title-group">
+                                <img src="images/ut-longhorn-logo.svg" alt="University of Texas at Austin Longhorn Logo" class="education-icon" />
+                                <strong>The University of Texas at Austin</strong>
+                            </div>
                             <span class="education-period">2019 - 2023</span>
                         </div>
                         <p>Bachelor of Business Administration in Finance</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-list">
-                <div class="project-item">
-                    <h3>Pictolingo</h3>
-                    <p>
-                        Language learning app that helps improve writing and reading
-                        Mandarin Chinese.
-                    </p>
-                    <div class="project-meta">
-                        <span class="tech-tag">React Native</span>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Code</a>
-                            <a href="#" class="project-link">Demo</a>
-                        </div>
-                    </div>
-                </div>
+        <hr>
 
-                <div class="project-item">
-                    <h3>LionTalk</h3>
-                    <p>
-                        Columbia speaker seminar aggregator.
-                    </p>
-                    <div class="project-meta">
-                        <span class="tech-tag">Python</span>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Code</a>
-                        </div>
-                    </div>
-                </div>
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                
+                <h3>Pictolingo</h3>
+                <p>
+                    Language learning app that helps improve writing and reading
+                    Mandarin Chinese.
+                </p>
+                <p>
+                    <span class="tech-tag">React Native</span> · 
+                    <a href="#" class="project-link">Code</a> · 
+                    <a href="#" class="project-link">Demo</a>
+                </p>
 
-                <div class="project-item">
-                    <h3>ResyBot</h3>
-                    <p>
-                        Automating restaurant bookings for hard to get tables.
-                    </p>
-                    <div class="project-meta">
-                        <span class="tech-tag">Java</span>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Code</a>
-                        </div>
-                    </div>
-                </div>
+                <h3>LionTalk</h3>
+                <p>
+                    Columbia speaker seminar aggregator.
+                </p>
+                <p>
+                    <span class="tech-tag">Python</span> · 
+                    <a href="#" class="project-link">Code</a>
+                </p>
+
+                <h3>ResyBot</h3>
+                <p>
+                    Automating restaurant bookings for hard to get tables.
+                </p>
+                <p>
+                    <span class="tech-tag">Java</span> · 
+                    <a href="#" class="project-link">Code</a>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                    </div>
-                </div>
+        <hr>
 
-                <div class="skills-category">
-                    <h3>Technologies & Tools</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Data Structures</span>
-                        <span class="skill-tag">Algorithms</span>
-                        <span class="skill-tag">Discrete Math</span>
-                    </div>
-                </div>
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                
+                <h3>Programming Languages</h3>
+                <p>
+                    <span class="skill-tag">Java</span> · 
+                    <span class="skill-tag">Python</span> · 
+                    <span class="skill-tag">C</span>
+                </p>
+
+                <h3>Technologies & Tools</h3>
+                <p>
+                    <span class="skill-tag">Docker</span> · 
+                    <span class="skill-tag">Git</span> · 
+                    <span class="skill-tag">uv</span> · 
+                    <span class="skill-tag">Maven</span>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Andrew Hsu</p>

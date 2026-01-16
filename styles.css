@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     color: #1a1a1a;
     background-color: #ffffff;
@@ -18,288 +18,152 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
-/* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e5e5;
-    z-index: 1000;
+/* Typography */
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
 }
 
-.nav-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 64px;
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
 }
 
-.nav-logo a {
-    font-size: 18px;
+h3 {
+    font-size: 1.5em;
     font-weight: 600;
-    color: #1a1a1a;
-    text-decoration: none;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
 }
 
-.nav-menu {
-    display: flex;
-    gap: 32px;
-    align-items: center;
+p {
+    margin-bottom: 1em;
+    line-height: 1.7;
 }
 
-.nav-link {
-    color: #1a1a1a;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 16px;
-    transition: color 0.2s ease;
+strong {
+    font-weight: 600;
 }
 
-.nav-link:hover {
+/* Links */
+a {
     color: #0066cc;
+    text-decoration: none;
 }
 
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 4px;
+a:hover {
+    text-decoration: underline;
 }
 
-.bar {
-    width: 24px;
-    height: 2px;
-    background-color: #1a1a1a;
-    transition: 0.3s;
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 3em 0;
 }
 
 /* Hero Section */
 .hero {
-    padding: 120px 0 80px;
-    margin-top: 64px;
+    padding: 2em 0;
+    margin-top: 0;
 }
 
-.hero-title {
-    font-size: 48px;
-    font-weight: 600;
-    margin-bottom: 24px;
-    line-height: 1.2;
-    color: #1a1a1a;
+.hero h1 {
+    margin-top: 0;
 }
 
-.hero-description {
-    font-size: 18px;
-    margin-bottom: 32px;
-    color: #4a4a4a;
-    line-height: 1.7;
-}
-
-.hero-links {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.hero-link {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.hero-link:hover {
-    color: #0052a3;
-    text-decoration: underline;
-}
-
-/* Section Styles */
+/* Sections */
 section {
-    padding: 80px 0;
+    padding: 2em 0;
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 48px;
-    color: #1a1a1a;
-}
-
-/* About Section */
-.about-content {
-    max-width: 700px;
-}
-
-.about-content p {
-    font-size: 18px;
-    margin-bottom: 24px;
-    color: #4a4a4a;
-    line-height: 1.7;
-}
-
-.about-content h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 48px;
-    margin-bottom: 24px;
-    color: #1a1a1a;
-}
-
+/* Education */
 .education-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 24px;
+    margin-top: 1.5em;
 }
 
 .education-item {
-    padding: 24px 0;
+    margin-bottom: 1.5em;
+    padding-top: 1.5em;
     border-top: 1px solid #e5e5e5;
+}
+
+.education-item:first-child {
+    border-top: none;
+    padding-top: 0;
 }
 
 .education-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 8px;
+    align-items: center;
+    margin-bottom: 0.5em;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0.5em;
 }
 
-.education-header h4 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1a1a1a;
+.education-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.education-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .education-period {
-    font-size: 16px;
-    color: #6a6a6a;
+    font-size: 0.9em;
+    color: #666;
 }
 
 .education-item p {
-    font-size: 16px;
-    color: #6a6a6a;
+    color: #666;
     margin: 0;
 }
 
-/* Projects Section */
-.projects {
-    background-color: #fafafa;
-}
-
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-}
-
-.project-item {
-    padding-bottom: 48px;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.project-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.project-item h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #1a1a1a;
-}
-
-.project-item p {
-    font-size: 18px;
-    margin-bottom: 16px;
-    color: #4a4a4a;
-    line-height: 1.7;
-}
-
-.project-meta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.tech-tag {
-    background: #e5e5e5;
-    color: #1a1a1a;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.project-links {
-    display: flex;
-    gap: 16px;
-}
-
+/* Projects */
 .project-link {
     color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.2s ease;
 }
 
-.project-link:hover {
-    color: #0052a3;
-    text-decoration: underline;
-}
-
-/* Skills Section */
-.skills-content {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-}
-
-.skills-category h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #1a1a1a;
-}
-
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
+/* Tags */
+.tech-tag,
 .skill-tag {
-    background: #e5e5e5;
+    background: #f0f0f0;
     color: #1a1a1a;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 16px;
+    padding: 0.2em 0.5em;
+    border-radius: 3px;
+    font-size: 0.9em;
     font-weight: 500;
 }
 
 /* Footer */
 .footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 48px 0;
+    margin-top: 4em;
+    padding: 2em 0;
     text-align: center;
+    border-top: 1px solid #e5e5e5;
 }
 
 .footer p {
-    font-size: 16px;
-    color: #a0a0a0;
+    color: #666;
+    font-size: 0.9em;
+    margin: 0;
 }
 
 /* Responsive Design */
@@ -312,99 +176,34 @@ section {
         padding: 0 20px;
     }
 
-    .nav-container {
-        padding: 0 20px;
+    h1 {
+        font-size: 2em;
     }
 
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 64px;
-        flex-direction: column;
-        background-color: #ffffff;
-        width: 100%;
-        padding: 32px 20px;
-        border-bottom: 1px solid #e5e5e5;
-        transition: left 0.3s ease;
-        gap: 24px;
-        align-items: flex-start;
+    h2 {
+        font-size: 1.75em;
     }
 
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
-    .nav-toggle.active .bar:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
-    }
-
-    .nav-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle.active .bar:nth-child(3) {
-        transform: translateY(-6px) rotate(-45deg);
-    }
-
-    .hero {
-        padding: 80px 0 60px;
-    }
-
-    .hero-title {
-        font-size: 36px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-    }
-
-    section {
-        padding: 60px 0;
-    }
-
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 32px;
-    }
-
-    .about-content h3 {
-        font-size: 20px;
-        margin-top: 32px;
+    h3 {
+        font-size: 1.25em;
     }
 
     .education-header {
         flex-direction: column;
         align-items: flex-start;
     }
-
-    .project-item h3 {
-        font-size: 20px;
-    }
-
-    .project-item p {
-        font-size: 16px;
-    }
-
-    .skills-category h3 {
-        font-size: 20px;
-    }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 28px;
+    h1 {
+        font-size: 1.75em;
     }
 
-    .section-title {
-        font-size: 24px;
+    h2 {
+        font-size: 1.5em;
     }
 
-    .hero-links {
-        flex-direction: column;
-        gap: 16px;
+    h3 {
+        font-size: 1.1em;
     }
 }
