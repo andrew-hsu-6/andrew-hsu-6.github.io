@@ -6,8 +6,7 @@
     <title>Andrew Hsu</title>
     <meta name="description" content="Computer Science student at Columbia University specializing in algorithms, data structures, and software development.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,11 +16,10 @@
                 <a href="#home">Andrew Hsu</a>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <div class="nav-indicator" id="nav-indicator"></div>
-                <a href="#home" class="nav-link" data-section="home">Home</a>
-                <a href="#about" class="nav-link" data-section="about">About</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
@@ -33,37 +31,16 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Andrew</span>
-                </h1>
-                <h2 class="hero-subtitle">
-                    Welcome to my personal website!
-                </h2>
-                <p class="hero-description">
-                    Look around and get to know me.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="code-animation">
-                    <div class="code-line">
-                        <span class="keyword">class</span> <span class="class-name">Student</span> {
-                    </div>
-                    <div class="code-line indent">
-                        <span class="keyword">public</span> <span class="method">solveProblem</span>() {
-                    </div>
-                    <div class="code-line indent-2">
-                        <span class="keyword">return</span> <span class="string">"Innovation"</span>;
-                    </div>
-                    <div class="code-line indent">
-                        }
-                    </div>
-                    <div class="code-line">}</div>
-                </div>
+        <div class="container">
+            <h1 class="hero-title">Hi, I'm Andrew</h1>
+            <p class="hero-description">
+                Computer Science student at Columbia University. Formerly an investment analyst. 
+                Now building software and learning new things.
+            </p>
+            <div class="hero-links">
+                <a href="https://www.linkedin.com/in/andrewhsu6/" target="_blank" class="hero-link">LinkedIn</a>
+                <a href="https://github.com/andrew-hsu-6/" target="_blank" class="hero-link">GitHub</a>
+                <a href="https://leetcode.com/hsushuyu/" target="_blank" class="hero-link">LeetCode</a>
             </div>
         </div>
     </section>
@@ -71,65 +48,36 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">About</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Formerly an investment analyst working in finance. Now a student at Columbia University
-                        pursuing a career in software engineering. Feel free to connect with me as I begin my journey 
-                        in a new field!
-                    </p>
-                    <p>
-                        I'm interested in full-stack development and machine learning. Specifically, I hope to
-                        work on teams that are building products and features used directly by clients.
-                        In my free time, I enjoy playing soccer, tennis, and learning new things. My favorite
-                        soccer team is Chelsea, and my favorite tennis player is Carlos Alcaraz.
-                    </p>
-                    <div class="education">
-                        <h3>Education</h3>
-                        <div class="education-item">
-                            <div class="education-icon education-icon-columbia">
-                                <img src="images/columbia-seal.png" alt="Columbia University Seal" />
-                            </div>
-                            <div class="education-details">
-                                <h4 class="columbia-title">Columbia University</h4>
-                                <p>Bachelor of Science in Computer Science</p>
-                                <span class="education-period">2025 - Present</span>
-                            </div>
+                <p>
+                    Formerly an investment analyst working in finance. Now a student at Columbia University
+                    pursuing a career in software engineering. Feel free to connect with me as I begin my journey 
+                    in a new field!
+                </p>
+                <p>
+                    I'm interested in full-stack development and machine learning. Specifically, I hope to
+                    work on teams that are building products and features used directly by clients.
+                    In my free time, I enjoy playing soccer, tennis, and learning new things. My favorite
+                    soccer team is Chelsea, and my favorite tennis player is Carlos Alcaraz.
+                </p>
+                
+                <h3>Education</h3>
+                <div class="education-list">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>Columbia University</h4>
+                            <span class="education-period">2025 - Present</span>
                         </div>
+                        <p>Bachelor of Science in Computer Science</p>
                     </div>
-                    <div class="education">
-                        <div class="education-item">
-                            <div class="education-icon education-icon-ut">
-                                <img src="images/ut-longhorn-logo.svg" alt="University of Texas at Austin Longhorn Logo" />
-                            </div>
-                            <div class="education-details">
-                                <h4 class="ut-austin-title">The University of Texas at Austin</h4>
-                                <p>Bachelor of Business Administration in Finance</p>
-                                <span class="education-period">2019 - 2023</span>
-                            </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>The University of Texas at Austin</h4>
+                            <span class="education-period">2019 - 2023</span>
                         </div>
+                        <p>Bachelor of Business Administration in Finance</p>
                     </div>
-                </div>
-                <div class="about-stats">
-                    <a href="https://www.linkedin.com/in/andrewhsu6/" target="_blank" class="social-widget">
-                        <div class="social-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="social-label">LinkedIn</div>
-                    </a>
-                    <a href="https://github.com/andrew-hsu-6/" target="_blank" class="social-widget">
-                        <div class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="social-label">GitHub</div>
-                    </a>
-                    <a href="https://leetcode.com/hsushuyu/" target="_blank" class="social-widget">
-                        <div class="social-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="social-label">LeetCode</div>
-                    </a>
                 </div>
             </div>
         </div>
@@ -138,73 +86,45 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-code"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Pictolingo</h3>
-                        <p>
-                            Language learning app that helps improve writing and reading
-                            Mandarin Chinese.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                        </div>
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-list">
+                <div class="project-item">
+                    <h3>Pictolingo</h3>
+                    <p>
+                        Language learning app that helps improve writing and reading
+                        Mandarin Chinese.
+                    </p>
+                    <div class="project-meta">
+                        <span class="tech-tag">React Native</span>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                            <a href="#" class="project-link">Code</a>
+                            <a href="#" class="project-link">Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-code"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>LionTalk</h3>
-                        <p>
-                            Columbia speaker seminar aggregator.
-                        </p>
-                        <div class="project-tech">
-
-                        </div>
+                <div class="project-item">
+                    <h3>LionTalk</h3>
+                    <p>
+                        Columbia speaker seminar aggregator.
+                    </p>
+                    <div class="project-meta">
+                        <span class="tech-tag">Python</span>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
+                            <a href="#" class="project-link">Code</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-code"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>ResyBot</h3>
-                        <p>
-                            Automating restaurant bookings for hard to get tables.
-                        </p>
-                        <div class="project-tech">
-                        </div>
+                <div class="project-item">
+                    <h3>ResyBot</h3>
+                    <p>
+                        Automating restaurant bookings for hard to get tables.
+                    </p>
+                    <div class="project-meta">
+                        <span class="tech-tag">Java</span>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
+                            <a href="#" class="project-link">Code</a>
                         </div>
                     </div>
                 </div>
@@ -215,83 +135,23 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title">Skills</h2>
             <div class="skills-content">
                 <div class="skills-category">
                     <h3>Programming Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-java"></i>
-                            </div>
-                            <div class="skill-info">
-                                <span class="skill-name">Java</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" data-level="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div class="skill-info">
-                                <span class="skill-name">Python</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" data-level="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-js-square"></i>
-                            </div>
-                            <div class="skill-info">
-                                <span class="skill-name">JavaScript</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" data-level="70"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
                     </div>
                 </div>
 
                 <div class="skills-category">
                     <h3>Technologies & Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="skill-info">
-                                <span class="skill-name">Data Structures</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" data-level="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-project-diagram"></i>
-                            </div>
-                            <div class="skill-info">
-                                <span class="skill-name">Algorithms</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" data-level="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <div class="skill-info">
-                                <span class="skill-name">Discrete Math</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" data-level="80"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Discrete Math</span>
                     </div>
                 </div>
             </div>
@@ -301,15 +161,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Andrew Hsu. Built with love.</p>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                </div>
-            </div>
+            <p>&copy; 2025 Andrew Hsu</p>
         </div>
     </footer>
 
