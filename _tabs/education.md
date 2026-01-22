@@ -4,8 +4,6 @@ icon: fas fa-graduation-cap
 order: 5
 ---
 
-## Education
-
 ### Columbia University
 **2025 - Present**
 

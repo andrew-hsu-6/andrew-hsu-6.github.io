@@ -4,8 +4,6 @@ icon: fas fa-code
 order: 6
 ---
 
-## Projects
-
 ### Pictolingo
 Language learning app that helps improve writing and reading Mandarin Chinese.
 
