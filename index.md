@@ -1,6 +1,6 @@
 ---
-layout: home
-# Index page
+layout: page
+title: About
 ---
 
 Formerly an investment analyst working in finance. Now a student at Columbia University pursuing a career in software engineering. Feel free to connect with me as I begin my journey in a new field!
