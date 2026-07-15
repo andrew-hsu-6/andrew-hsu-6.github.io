@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@import "@fontsource/fraunces/500.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/700.css";
+@import "@fontsource/fraunces/600-italic.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@theme {
+  --color-cream: #fbf7f0;
+  --color-cream-dark: #f3ecdf;
+  --color-charcoal: #2b2622;
+  --color-charcoal-soft: #5c534a;
+  --color-rust: #c1622d;
+  --color-rust-dark: #a34f22;
+  --color-sage: #6b7a5e;
+
+  --font-serif: "Fraunces", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+}

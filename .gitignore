@@ -1,19 +1,13 @@
-# Bundler cache
-.bundle
-vendor
-Gemfile.lock
+# Build output
+dist
+.astro
 
-# Jekyll cache
-.jekyll-cache
-.jekyll-metadata
-_site
-
-# RubyGems
-*.gem
-
-# NPM dependencies
+# Dependencies
 node_modules
-package-lock.json
+
+# Environment
+.env
+.env.production
 
 # IDE configurations
 .idea
@@ -23,5 +17,4 @@ package-lock.json
 !.vscode/tasks.json
 
 # Misc
-_sass/vendors
-assets/js/dist
+.DS_Store
