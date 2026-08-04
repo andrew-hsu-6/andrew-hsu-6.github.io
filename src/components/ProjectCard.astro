@@ -3,14 +3,14 @@ interface Props {
   name: string;
   description: string;
   tech: string[];
-  github: string;
+  link: string;
 }
 
-const { name, description, tech, github } = Astro.props;
+const { name, description, tech, link } = Astro.props;
 ---
 
 <a
-  href={github}
+  href={link}
   target="_blank"
   rel="noopener noreferrer"
   class="group block rounded-2xl border border-charcoal/10 bg-cream-dark/40 p-6 hover:border-rust/40 hover:shadow-md transition-all"
