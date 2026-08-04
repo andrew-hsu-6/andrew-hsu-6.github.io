@@ -2,25 +2,26 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
-// TODO: replace with the real repo URLs for each project
 const projects = [
   {
-    name: "Pictolingo",
+    name: "Calordle",
     description:
-      "A language learning app that helps improve writing and reading Mandarin Chinese.",
-    tech: ["React Native"],
-    github: "https://github.com/andrew-hsu-6/pictolingo",
+      "A daily Wordle-style calorie guessing game, with a progressive hint system and shareable results.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL"],
+    github: "https://github.com/andrew-hsu-6/calordle",
   },
   {
     name: "LionTalk",
-    description: "An aggregator for Columbia speaker seminars.",
-    tech: ["Python"],
+    description:
+      "A centralized hub for upcoming Columbia speaker events, scraped and normalized daily with Gemini.",
+    tech: ["Python", "Gemini API"],
     github: "https://github.com/andrew-hsu-6/liontalk",
   },
   {
     name: "ResyBot",
-    description: "Automates restaurant bookings for hard-to-get tables.",
-    tech: ["Java"],
+    description:
+      "Automated monitoring tool that polls for hard-to-get restaurant reservations.",
+    tech: ["Java", "Docker"],
     github: "https://github.com/andrew-hsu-6/resybot",
   },
 ];
