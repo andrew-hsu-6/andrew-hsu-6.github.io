@@ -3,25 +3,38 @@ interface Props {
   name: string;
   description: string;
   tech: string[];
-  link: string;
+  link?: string;
 }
 
 const { name, description, tech, link } = Astro.props;
+const Tag = link ? "a" : "div";
 ---
 
-<a
+<Tag
   href={link}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="group block rounded-2xl border border-charcoal/10 bg-cream-dark/40 p-6 hover:border-rust/40 hover:shadow-md transition-all"
+  target={link ? "_blank" : undefined}
+  rel={link ? "noopener noreferrer" : undefined}
+  class:list={[
+    "group block rounded-2xl border border-charcoal/10 bg-cream-dark/40 p-6",
+    link && "hover:border-rust/40 hover:shadow-md transition-all",
+  ]}
 >
   <div class="flex items-start justify-between gap-3">
-    <h3 class="font-serif text-xl font-semibold text-charcoal group-hover:text-rust transition-colors">
+    <h3
+      class:list={[
+        "font-serif text-xl font-semibold text-charcoal",
+        link && "group-hover:text-rust transition-colors",
+      ]}
+    >
       {name}
     </h3>
-    <svg viewBox="0 0 24 24" class="w-5 h-5 mt-1 shrink-0 fill-none stroke-charcoal-soft group-hover:stroke-rust transition-colors">
-      <path d="M7 17 17 7M7 7h10v10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
+    {
+      link && (
+        <svg viewBox="0 0 24 24" class="w-5 h-5 mt-1 shrink-0 fill-none stroke-charcoal-soft group-hover:stroke-rust transition-colors">
+          <path d="M7 17 17 7M7 7h10v10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      )
+    }
   </div>
   <p class="mt-2 text-sm leading-relaxed text-charcoal-soft">{description}</p>
   <div class="mt-4 flex flex-wrap gap-2">
@@ -33,4 +46,4 @@ const { name, description, tech, link } = Astro.props;
       ))
     }
   </div>
-</a>
+</Tag>
