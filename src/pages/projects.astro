@@ -4,13 +4,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = [
   {
-    name: "Calordle",
-    description:
-      "A daily Wordle-style calorie guessing game, with a progressive hint system and shareable results.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL"],
-    link: "https://github.com/andrew-hsu-6/calordle",
-  },
-  {
     name: "LionTalk",
     description:
       "A centralized hub for upcoming Columbia speaker events, scraped and normalized daily with Gemini.",
@@ -18,11 +11,17 @@ const projects = [
     link: "https://liontalk.vercel.app/",
   },
   {
+    name: "Calordle",
+    description:
+      "A daily Wordle-style calorie guessing game, with a progressive hint system and shareable results.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL"],
+  },
+  {
     name: "ResyBot",
     description:
       "Automated monitoring tool that polls for hard-to-get restaurant reservations.",
     tech: ["Java", "Docker"],
-    link: "https://github.com/andrew-hsu-6/resybot",
+    link: "https://github.com/LionDevelopers/ResyBot",
   },
 ];
 ---
@@ -33,7 +32,7 @@ const projects = [
       Projects
     </h1>
     <p class="mt-3 text-charcoal-soft">
-      A few things I've built while learning to write software.
+      Things I've built and shipped.
     </p>
     <div class="mt-10 grid gap-5 sm:grid-cols-2">
       {projects.map((project) => <ProjectCard {...project} />)}
