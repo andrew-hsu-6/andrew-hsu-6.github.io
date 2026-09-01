@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pdf = "/Andrew-Hsu-Resume.pdf";
+// Hide the built-in viewer chrome so the embed reads as part of the page.
+const pdfEmbed = `${pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`;
+---
+
+<BaseLayout title="Resume">
+  <section class="max-w-3xl mx-auto px-6 py-16 sm:py-20">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-charcoal">
+        Resume
+      </h1>
+      <a
+        href={pdf}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex items-center gap-2 self-start rounded-full bg-rust px-5 py-2.5 text-sm font-medium text-cream hover:bg-rust-dark transition-colors"
+      >
+        <svg viewBox="0 0 24 24" class="w-4 h-4 shrink-0 fill-none stroke-current">
+          <path
+            d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        Download PDF
+      </a>
+    </div>
+
+    <div
+      class="mt-8 hidden sm:block rounded-2xl border border-charcoal/10 bg-cream-dark/40 overflow-hidden"
+    >
+      <object data={pdfEmbed} type="application/pdf" class="w-full aspect-[8.5/11]">
+        <div class="p-8 text-center">
+          <p class="text-charcoal-soft">
+            Your browser can&rsquo;t display PDFs inline.
+          </p>
+          <a
+            href={pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-3 inline-block font-medium text-rust hover:text-rust-dark transition-colors"
+          >
+            Open the PDF instead &rarr;
+          </a>
+        </div>
+      </object>
+    </div>
+
+    <a
+      href={pdf}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group mt-8 sm:hidden flex items-center justify-between gap-4 rounded-2xl border border-charcoal/10 bg-cream-dark/40 px-6 py-5 hover:border-rust/40 transition-colors"
+    >
+      <div>
+        <p class="font-medium text-charcoal group-hover:text-rust transition-colors">
+          Andrew Hsu &mdash; Resume
+        </p>
+        <p class="mt-1 text-sm text-charcoal-soft">PDF, 1 page</p>
+      </div>
+      <svg
+        viewBox="0 0 24 24"
+        class="w-5 h-5 shrink-0 fill-none stroke-charcoal-soft group-hover:stroke-rust transition-colors"
+      >
+        <path
+          d="M7 17 17 7M7 7h10v10"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </a>
+  </section>
+</BaseLayout>
