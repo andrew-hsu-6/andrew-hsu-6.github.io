@@ -2,25 +2,13 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Jekyll Server",
-      "type": "shell",
-      "command": "./tools/run.sh",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "label": "Preview website",
+      "type": "process",
+      "command": "python3",
+      "args": ["-m", "http.server", "4321", "--bind", "127.0.0.1", "--directory", "public"],
+      "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": [],
-      "detail": "Runs the Jekyll server with live reload."
-    },
-    {
-      "label": "Build Jekyll Site",
-      "type": "shell",
-      "command": "./tools/test.sh",
-      "group": {
-        "kind": "build"
-      },
-      "problemMatcher": [],
-      "detail": "Build the Jekyll site for production."
+      "detail": "Serve the static website at http://127.0.0.1:4321/."
     }
   ]
 }
